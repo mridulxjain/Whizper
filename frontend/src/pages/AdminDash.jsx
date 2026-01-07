@@ -27,7 +27,7 @@ export default function AdminDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`https://whizper-backend.onrender.com/api/confessions/${id}`, {
+      const res = await fetch(`https://whizper.onrender.com/api/confessions/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
