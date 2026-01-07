@@ -10,7 +10,7 @@ export default function New() {
     e.preventDefault();
     if (!text.trim()) return;
 
-    const res = await fetch("https://anon-confession-board-production.up.railway.app/api/confessions", {
+    const res = await fetch("https://whizper.onrender.com/api/confessions", {
       method: "POST",
       headers: {"Content-Type": "application/json",},
       body: JSON.stringify({text}),

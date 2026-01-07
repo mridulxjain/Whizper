@@ -9,7 +9,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchConfessions = async () => {
       try {
-        const res = await fetch("https://anon-confession-board-production.up.railway.app/api/confessions");
+        const res = await fetch("https://whizper.onrender.com/api/confessions");
         const data = await res.json();
         setAllConfessions(data);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function AdminDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/confessions/${id}`, {
+      const res = await fetch(`https://whizper-backend.onrender.com/api/confessions/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

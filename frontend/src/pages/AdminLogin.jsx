@@ -10,7 +10,7 @@ export default function AdminLogin({ onLogin }) {
     setError("");
 
     try {
-      const res = await fetch("https://anon-confession-board-production.up.railway.app/api/admin/login",
+      const res = await fetch("https://whizper.onrender.com/api/admin/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
