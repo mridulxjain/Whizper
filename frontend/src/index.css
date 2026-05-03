@@ -17,6 +17,7 @@
   --text: #111827;    /* gray-900 */
   --muted: #6b7280;   /* gray-500 */
   --border: #2c2c2c;
+  --border-rgb: 44, 44, 44;
   --accent: #f43f5e;
   --secondary: #10B981;
 }
@@ -26,6 +27,7 @@
   --text: #f8fafc;     /* gray-50 */
   --muted: #94a3b8;    /* slate-400 */
   --border: #e5e7eb;
+  --border-rgb: 229, 231, 235;
   --accent: #fb7185;
   --secondary: #34D399;
 }
@@ -52,4 +54,79 @@ html, body, #root {
 
 * {
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Premium Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-soft {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, filter, transform;
+}
+
+.animate-fade-soft {
+  animation: fade-soft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
